@@ -20,6 +20,7 @@ function Home() {
       );
 
       const data = await res.json();
+      console.log(data);
       setphotoData(data);
     }
   }, []);
