@@ -1,40 +1,23 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace; */
-/* } */
-.main {
+.app_container{
   background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+}
+.main {
   height: 100%;
   color: white;
   text-align: center;
 }
-
-/* .sub_main {
- 
-  
-} */
-
 .avatar {
   vertical-align: center;
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
-
 .nav {
   background-color: black;
   color: white;
 }
-
 .t_photo {
   width: 80%;
   /* padding: 20px 0; */
@@ -44,12 +27,6 @@ body {
   width: 100%;
   height: 70vh;
 }
-/* .date_c {
-  width: max-content;
-  background-color: rgb(73, 73, 73);
-  border-radius: 10px;
-  margin: 20px auto;
-} */
 .date {
   padding: 0 0 20px 0;
   font-weight: 700;
@@ -64,11 +41,9 @@ body {
   margin: 20px auto;
   box-shadow: 3px 3px 9px 4px rgba(0, 0, 0, 0.3);
 }
-
 .btn_show:hover {
   background-color: rgb(51, 51, 51);
 }
-
 .expla_c {
   max-width: 800px;
   background-color: rgb(73, 73, 73);
@@ -79,9 +54,39 @@ body {
 .expla {
   padding: 20px;
 }
-
 .footer {
   background-color: rgba(0, 0, 0, 0.3);
+  color: #f3f3f3;
+  text-align: center;
+  padding: 10px;
+}
+.footer a{
+  text-decoration: none;
+  /* color: #3498db; */
+}
+.spinner_container {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100vh;
+  display: flex;
+  
+}
+
+.spinner {
+  margin: 80px auto;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media screen and (max-width: 940px) {
