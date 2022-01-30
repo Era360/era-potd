@@ -17,7 +17,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 initializeAnalytics(app);
 // const analytics = getAnalytics(app);
 // logEvent(analytics, "notification_received");
