@@ -1,16 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { Envelope, Facebook, Person } from "react-bootstrap-icons";
+import { Envelope, Facebook } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 // import Nothing from "./nothing";
 import Spinner from "./spinner";
+// import ReactGA from "react-ga";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../firebase";
 // import { nasaphoto } from "./assets/images";
 
 function Home() {
   const [photoData, setphotoData] = useState(null);
   const [showExpla, setshowExpla] = useState(false);
 
+  logEvent(analytics, 'screen_view', {
+    firebase_screen: "Fredastro_Home",
+    firebase_screen_class: "Home"
+  });
+
   function show() {
     setshowExpla(!showExpla);
+    logEvent(analytics, "show_description");
+
   }
 
   useEffect(() => {
@@ -23,7 +33,6 @@ function Home() {
       );
 
       const data = await res.json();
-      // console.log(data);
       setphotoData(data);
     }
 
@@ -37,15 +46,15 @@ function Home() {
           <Link className="navbar-brand" to="/">
             996fredastro
           </Link>
-          {/* <img className="avatar" src={usericon} alt="" /> */}
-          <button
+          {/* <button
             className="btn"
             data-bs-toggle="tooltip"
             data-bs-placement="bottom"
             title="Register an account"
+            onClick={() => logEvent(analytics, "Login_button")}
           >
             <Person size={30} color="white" />
-          </button>
+          </button> */}
         </div>
       </nav>
       {
@@ -76,10 +85,16 @@ function Home() {
 
             {showExpla ? (
               <div className="expla_c">
-                <div className="expla">{`Explanation: ${photoData.explanation}`}</div>
+                <h4 style={{ textDecoration: "underline", paddingTop: "20px" }}>Explanation</h4>
+                <div className="expla">
+                  {photoData.explanation}
+                </div>
               </div>
             ) : (
-              <button className="btn_show" type="button" onClick={show}>
+              <button className="btn_show"
+                type="button"
+                onClick={show}
+              >
                 Show Description
               </button>
             )}

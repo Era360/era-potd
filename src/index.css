@@ -45,14 +45,16 @@
   background-color: rgb(51, 51, 51);
 }
 .expla_c {
-  max-width: 800px;
+  width: 80%;
   background-color: rgb(73, 73, 73);
   border-radius: 10px;
   margin: 20px auto;
   box-shadow: 3px 3px 9px 4px rgba(0, 0, 0, 0.3);
 }
 .expla {
-  padding: 20px;
+  padding: 25px 40px;
+  line-height: 1.7rem;
+  font-size: larger;
 }
 .footer {
   background-color: rgba(0, 0, 0, 0.3);
@@ -98,7 +100,7 @@
     width: 100%;
     height: 50vh;
   }
-  .expla_c {
-    max-width: 300px;
+  .expla {
+    padding: 15px;
   }
 }
