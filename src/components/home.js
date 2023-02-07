@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Envelope, Facebook } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
-// import Nothing from "./nothing";
 import Spinner from "./spinner";
-// import ReactGA from "react-ga";
 import { logEvent } from "firebase/analytics";
 import { analytics } from "../firebase";
-// import { nasaphoto } from "./assets/images";
 
 function Home() {
   const [photoData, setphotoData] = useState(null);
@@ -24,7 +21,7 @@ function Home() {
   }
 
   useEffect(() => {
-    fetchphoto();
+    if (!photoData) fetchphoto();
 
     async function fetchphoto() {
 
@@ -36,7 +33,7 @@ function Home() {
       setphotoData(data);
     }
 
-  }, []);
+  }, [photoData]);
 
 
   return (
